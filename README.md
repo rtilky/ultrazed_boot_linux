@@ -106,8 +106,10 @@ This tutorial shows you how to boot Linux from a SD card on the UltraZed-EG IOCC
     5. Go to _Image Packaging Configuration ---> Device node of SD device --->_ type `/dev/mmcblk1p2`
     6. Use the right arrow key to select Save, keep pressing Enter to return to the Configuration screen
     7. Use the right arrow key again to keep selecting Exit until you have returned to the terminal
-9. Enable SSH server: `petalinux-config -c rootfs` go to _Filesystem Packages ---> console ---> network ---> dropbear_ select dropbear ([space]). Save and Exit.
-10. Create an application to interface the AXI4 IP (axi\_dummy) on the PL.
+9. Enable SSH server: `petalinux-config -c rootfs` go to _Filesystem Packages ---> console ---> network ---> dropbear_ select dropbear ([space]). 
+10. Enable _Filesystem Packages -> Base -> e2fsprogs_
+11. Save and Exit.
+12. Create an application to interface the AXI4 IP (axi\_dummy) on the PL.
     1. `petalinux-create --type apps --template c --name axidummy --enable` (caution: under line *\_* is not allowed in application names).
     2. Navigate to: `cd ${PETALINUX_PROJECT_ROOT}/project-spec/meta-user/recipes-apps/axidummy/files/`
     3. Add the following build rule to the `Makefile`:
@@ -201,9 +203,9 @@ This tutorial shows you how to boot Linux from a SD card on the UltraZed-EG IOCC
     
     5. go back to project root: `cd ${PETALINUX_PROJECT_ROOT}`
   
-11. Build project for the first time: `petalinux-build`
-12. Package the project for the first time: `petalinux-package --boot --format BIN --fsbl images/linux/zynqmp_fsbl.elf --u-boot images/linux/u-boot.elf --fpga ${VIVADO_PROJECT_ROOT}/${VIVADO_PROJECT_NAME}.runs/impl_1/design_1_wrapper.bit --force`
-13. Convert the bitstream `.bit` file into a `.bin` file.
+13. Build project for the first time: `petalinux-build`
+14. Package the project for the first time: `petalinux-package --boot --format BIN --fsbl images/linux/zynqmp_fsbl.elf --u-boot images/linux/u-boot.elf --fpga ${VIVADO_PROJECT_ROOT}/${VIVADO_PROJECT_NAME}.runs/impl_1/design_1_wrapper.bit --force`
+15. Convert the bitstream `.bit` file into a `.bin` file.
     1. create the file `${PETALINUX_PROJECT_ROOT}/build/bootgen.own.bif` with the following content:
     
     ```
@@ -220,7 +222,7 @@ This tutorial shows you how to boot Linux from a SD card on the UltraZed-EG IOCC
     2. Run from the `${PETALINUX_PROJECT_ROOT}` the following: `bootgen -image build/bootgen.own.bif -arch zynqmp -process_bitstream bin`
     3. This generates the `.bin` file at: `${VIVADO_PROJECT_ROOT}/${VIVADO_PROJECT_NAME}.runs/impl_1/design_1_wrapper.bit.bin`
 
-14. Create an application to install the bitstream into the root filesystem.
+16. Create an application to install the bitstream into the root filesystem.
     1. `petalinux-create --type apps --template install --name bitstream --enable`
     2. Remove the dummy file: `rm project-spec/meta-user/recipes-apps/bitstream/files/bitstream`
     3. Copy the bitstream `.bin` file into the application files: `cp ${VIVADO_PROJECT_ROOT}/${VIVADO_PROJECT_NAME}.runs/impl_1/design_1_wrapper.bit.bin project-spec/meta-user/recipes-apps/bitstream/files`
@@ -239,7 +241,7 @@ This tutorial shows you how to boot Linux from a SD card on the UltraZed-EG IOCC
     }
     ```
 
-15. Edit the device tree file 
+17. Edit the device tree file 
     1. open `project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi`
     2. Navigate to `&sdhci0` and `&sdhci1` and add `disable-wp;` to both sections:
     
@@ -261,9 +263,9 @@ This tutorial shows you how to boot Linux from a SD card on the UltraZed-EG IOCC
     };
     ``` 
 
-16. Clean up the project: `petalinux-build -x distclean`
-17. Build the project for a second time: `petalinux-build`
-18. Package the project for a second time: `petalinux-package --boot --format BIN --fsbl images/linux/zynqmp_fsbl.elf --u-boot images/linux/u-boot.elf --fpga ${VIVADO_PROJECT_ROOT}/${VIVADO_PROJECT_NAME}.runs/impl_1/design_1_wrapper.bit --force`
+18. Clean up the project: `petalinux-build -x distclean`
+19. Build the project for a second time: `petalinux-build`
+20. Package the project for a second time: `petalinux-package --boot --format BIN --fsbl images/linux/zynqmp_fsbl.elf --u-boot images/linux/u-boot.elf --fpga ${VIVADO_PROJECT_ROOT}/${VIVADO_PROJECT_NAME}.runs/impl_1/design_1_wrapper.bit --force`
 
 ## Format the SD card
 1. Plug the SD card into your PC.
