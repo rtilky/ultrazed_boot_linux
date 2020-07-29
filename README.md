@@ -11,15 +11,15 @@ This tutorial shows you how to boot Linux from a SD card on the UltraZed-EG IOCC
 2. Start Vivado with: `vivado`
 3. Create a new project for the UltraZed-EG IOCC (xczu3eg-sfva625-1-i)
 4. In the Project Manager -> Project Summary, under Settings make sure the Target language is set to Verilog.  If not, click on the language, and select Verilog from the Target language dropdown menu in the Settings window.  Click OK
-4. Create a new AXI4 IP by going to _Tools -> Create and Package New IP..._
-5. Click _Next >_
-6. Choose _Create a new AXI4 Peripheral_ and click _Next >_
-7. Choose a name (here: `axi_dummy`)
-8. Click _Next >_
-9. Keep the interfaces as they are and click _Next >_
-10. Choose _Edit IP_ and click _Finish >_
-11. In the _Sources_ view double click on _axi\_test\_v1\_0\_S00\_AXI\_inst ..._
-12. Navigate to the following section in the verilog code:
+5. Create a new AXI4 IP by going to _Tools -> Create and Package New IP..._
+6. Click _Next >_
+7. Choose _Create a new AXI4 Peripheral_ and click _Next >_
+8. Choose a name (here: `axi_dummy`)
+9. Click _Next >_
+10. Keep the interfaces as they are and click _Next >_
+11. Choose _Edit IP_ and click _Finish >_
+12. In the _Sources_ view double click on _axi\_test\_v1\_0\_S00\_AXI\_inst ..._
+13. Navigate to the following section in the verilog code:
 
     ```verilog
     // Implement memory mapped register select and read logic generation
@@ -59,33 +59,33 @@ This tutorial shows you how to boot Linux from a SD card on the UltraZed-EG IOCC
     end
     ```
     
-13. Go to _Package IP -> Packaging Steps -> File Groups_
-14. Click on _Merge changes from File Groups Wizard_
-15. Click on _Package IP -> Packaging Steps -> Review and Package_
-16. Click on _Re-Package IP_
-17. Click on _Yes_
-18. Go to _Flow Navigator -> Project Manager -> IP INTEGRATOR -> Create Block Design_
-19. In the _Diagram_ window click right and choose _Add IP_
-20. Search for _Zynq_ and double-click on _Zynq UltraScale+ MPSoC_
-21. Above the _Diagram_ window clock on _Run Block Automation_
-22. Click on _OK_
-23. Double-click on the _Zynq UltraSCALE+_ in the _Diagram window_
-24. Go to _Page Navigator -> I/O Configuration_
-25. Unfold _High Speed_ in the _I/O Configuration_ window
-26. Uncheck _Display Port_
-27. Click on _OK_
-28. In the _Diagram_ window click right and choose _Add IP_
-29. Search for _axi dummy_ and double-click on _axi\_dummy\_v1.0_
-30. Above the _Diagram_ window clock on _Run Block Automation_
-31. Click on _OK_
-32. Go to the _Sources_ tab and right-click on _design\_1 (design\_1.bd)_ and choose _Create HDL Wrapper_
-33. Click on _OK_
-34. Go to _Flow Navigator -> Project Manager -> PROGRAM AND DEBUG_ and click _Generate Bitstream_
-35. Click on _OK_
-36. When the synthesis, implementation and writing bitstream is completed click on _OK_
-37. Go to _Files -> Export -> Export Hardware..._
-38. Check _Include bitstream_ and click on _OK_
-39. You may close Vivado now.
+14. Go to _Package IP -> Packaging Steps -> File Groups_
+15. Click on _Merge changes from File Groups Wizard_
+16. Click on _Package IP -> Packaging Steps -> Review and Package_
+17. Click on _Re-Package IP_
+18. Click on _Yes_
+19. Go to _Flow Navigator -> Project Manager -> IP INTEGRATOR -> Create Block Design_
+20. In the _Diagram_ window click right and choose _Add IP_
+21. Search for _Zynq_ and double-click on _Zynq UltraScale+ MPSoC_
+22. Above the _Diagram_ window clock on _Run Block Automation_
+23. Click on _OK_
+24. Double-click on the _Zynq UltraSCALE+_ in the _Diagram window_
+25. Go to _Page Navigator -> I/O Configuration_
+26. Unfold _High Speed_ in the _I/O Configuration_ window
+27. Uncheck _Display Port_
+28. Click on _OK_
+29. In the _Diagram_ window click right and choose _Add IP_
+30. Search for _axi dummy_ and double-click on _axi\_dummy\_v1.0_
+31. Above the _Diagram_ window clock on _Run Block Automation_
+32. Click on _OK_
+33. Go to the _Sources_ tab and right-click on _design\_1 (design\_1.bd)_ and choose _Create HDL Wrapper_
+34. Click on _OK_
+35. Go to _Flow Navigator -> Project Manager -> PROGRAM AND DEBUG_ and click _Generate Bitstream_
+36. Click on _OK_
+37. When the synthesis, implementation and writing bitstream is completed click on _OK_
+38. Go to _Files -> Export -> Export Hardware..._
+39. Check _Include bitstream_ and click on _OK_
+40. You may close Vivado now.
 
 ## Download the Board Support Package for the UltraZed IOCC
 1. Go to: [http://ultrazed.org/support/design/17596/131](http://ultrazed.org/support/design/17596/131)
