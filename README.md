@@ -78,11 +78,12 @@ This tutorial shows you how to boot Linux from a SD card on the UltraZed-EG IOCC
 30. Go to the _Sources_ tab and right-click on _design\_1 (design\_1.bd)_ and choose _Create HDL Wrapper_
 31. Make sure "Let Vivado manage wrapper and auto-update" is selected and click _OK_
 32. Go to _Flow Navigator -> Project Manager -> PROGRAM AND DEBUG_ and click _Generate Bitstream_
-33. Click on _OK_
-34. When the synthesis, implementation and writing bitstream is completed click on _OK_
-35. Go to _Files -> Export -> Export Hardware..._
-36. Check _Include bitstream_ and click on _OK_
-37. You may close Vivado now.
+33. Click on _Yes_ (if applicable)
+34. In the Launch Runs window, ensure "Launch runs on local host:" is selected.  To speedup the generation of the bitstream file, you may increase the number of jobs.  The maximum option in this dropdown menu is based on the number of virtual cores in your CPU.
+35. When the synthesis, implementation and writing bitstream is completed click on _OK_
+36. Go to _Files -> Export -> Export Hardware..._
+37. Check _Include bitstream_ and click on _OK_
+38. You may close Vivado now.
 
 ## Download the Board Support Package for the UltraZed IOCC
 1. Go to: [http://ultrazed.org/support/design/17596/131](http://ultrazed.org/support/design/17596/131)
