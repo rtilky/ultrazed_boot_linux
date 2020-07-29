@@ -9,7 +9,7 @@ This tutorial shows you how to boot Linux from a SD card on the UltraZed-EG IOCC
 ## Creating a new Vivado Project with an AXI4 IP
 1. `source ${VIVADO_INSTALL_DIR}/settings64.sh`
 2. Start Vivado with: `vivado`
-3. Create a new project for the UltraZed-EG IOCC (xczu3eg-sfva625-1-i)
+3. Create a new project for the UltraZed-EG IOCC (xczu3eg-sfva625-1-i).  This device can be found under the Boards tab in the Default Part window
 4. In the Project Manager -> Project Summary, under Settings make sure the Target language is set to Verilog.  If not, click on the language, and select Verilog from the Target language dropdown menu in the Settings window.  Click OK
 5. Create a new AXI4 IP by going to _Tools -> Create and Package New IP..._
 6. Click _Next >_
