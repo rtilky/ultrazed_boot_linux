@@ -18,7 +18,7 @@ This tutorial shows you how to boot Linux from a SD card on the UltraZed-EG IOCC
 9. Click _Next >_
 10. Keep the interfaces as they are and click _Next >_
 11. Choose _Edit IP_ and click _Finish >_
-12. In the _Sources_ view double click on _axi\_test\_v1\_0\_S00\_AXI\_inst ..._
+12. In the _Sources_ view expand _axi\_dummy\_v1\_0_ and double click on _axi\_dummy\_v1\_0\_S00\_AXI\_inst ..._
 13. Navigate to the following section in the verilog code:
 
     ```verilog
