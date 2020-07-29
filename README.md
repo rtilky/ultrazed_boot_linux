@@ -76,7 +76,7 @@ This tutorial shows you how to boot Linux from a SD card on the UltraZed-EG IOCC
 28. Click on _OK_
 29. A suggestion to Run Block Automation will appear again, do not click on this, or the changes to _Zynq UltraSCALE+_ will be undone
 30. Go to the _Sources_ tab and right-click on _design\_1 (design\_1.bd)_ and choose _Create HDL Wrapper_
-31. Click on _OK_
+31. Make sure "Let Vivado manage wrapper and auto-update" is selected and click _OK_
 32. Go to _Flow Navigator -> Project Manager -> PROGRAM AND DEBUG_ and click _Generate Bitstream_
 33. Click on _OK_
 34. When the synthesis, implementation and writing bitstream is completed click on _OK_
