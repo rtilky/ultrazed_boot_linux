@@ -104,6 +104,8 @@ This tutorial shows you how to boot Linux from a SD card on the UltraZed-EG IOCC
     3. Go to _Subsystem AUTO Hardware Settings ---> Advanced bootable images storage Settings ---> dtb image settings ---> image storage media --->_ select _primary sd_.
     4. Go to _Image Packaging Configuration ---> Root filesystem type --->_ select _SD card_
     5. Go to _Image Packaging Configuration ---> Device node of SD device --->_ type `/dev/mmcblk1p2`
+    6. Use the right arrow key to select Save, keep pressing Enter to return to the Configuration screen
+    7. Use the right arrow key again to keep selecting Exit until you have returned to the terminal
 9. Enable SSH server: `petalinux-config -c rootfs` go to _Filesystem Packages ---> console ---> network ---> dropbear_ select dropbear ([space]). Save and Exit.
 10. Create an application to interface the AXI4 IP (axi\_dummy) on the PL.
     1. `petalinux-create --type apps --template c --name axidummy --enable` (caution: under line *\_* is not allowed in application names).
