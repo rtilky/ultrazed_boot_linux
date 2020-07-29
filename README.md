@@ -67,25 +67,22 @@ This tutorial shows you how to boot Linux from a SD card on the UltraZed-EG IOCC
 19. Go to _Flow Navigator -> Project Manager -> IP INTEGRATOR -> Create Block Design_
 20. In the _Diagram_ window click right and choose _Add IP_
 21. Search for _Zynq_ and double-click on _Zynq UltraScale+ MPSoC_
-22. Above the _Diagram_ window clock on _Run Block Automation_
-23. Click on _OK_
+22. Similarly, Add the IP for _axi\_dummy\_v1.0_
+23. Above the _Diagram_ window click on _Run Block Automation_ and _Run Connection Automation_, leaving the settings unchanged
 24. Double-click on the _Zynq UltraSCALE+_ in the _Diagram window_
 25. Go to _Page Navigator -> I/O Configuration_
 26. Unfold _High Speed_ in the _I/O Configuration_ window
 27. Uncheck _Display Port_
 28. Click on _OK_
-29. In the _Diagram_ window click right and choose _Add IP_
-30. Search for _axi dummy_ and double-click on _axi\_dummy\_v1.0_
-31. Above the _Diagram_ window clock on _Run Block Automation_
-32. Click on _OK_
-33. Go to the _Sources_ tab and right-click on _design\_1 (design\_1.bd)_ and choose _Create HDL Wrapper_
-34. Click on _OK_
-35. Go to _Flow Navigator -> Project Manager -> PROGRAM AND DEBUG_ and click _Generate Bitstream_
-36. Click on _OK_
-37. When the synthesis, implementation and writing bitstream is completed click on _OK_
-38. Go to _Files -> Export -> Export Hardware..._
-39. Check _Include bitstream_ and click on _OK_
-40. You may close Vivado now.
+29. A suggestion to Run Block Automation will appear again, do not click on this, or the changes to _Zynq UltraSCALE+_ will be undone
+30. Go to the _Sources_ tab and right-click on _design\_1 (design\_1.bd)_ and choose _Create HDL Wrapper_
+31. Click on _OK_
+32. Go to _Flow Navigator -> Project Manager -> PROGRAM AND DEBUG_ and click _Generate Bitstream_
+33. Click on _OK_
+34. When the synthesis, implementation and writing bitstream is completed click on _OK_
+35. Go to _Files -> Export -> Export Hardware..._
+36. Check _Include bitstream_ and click on _OK_
+37. You may close Vivado now.
 
 ## Download the Board Support Package for the UltraZed IOCC
 1. Go to: [http://ultrazed.org/support/design/17596/131](http://ultrazed.org/support/design/17596/131)
