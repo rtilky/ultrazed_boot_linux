@@ -314,12 +314,12 @@ This tutorial shows you how to boot Linux from a SD card on the UltraZed-EG IOCC
     ```
     
 20. Press `w` to write the new partition table to the SD card
-21. Format the first partition as FAT32 with: `sudo mkfs.vfat -F 32 -n boot /dev/sdX1`
-22. Format the second partition as ext4 with: `sudo mkfs.ext4 -L root /dev/sdX2`
+21. Format the first partition as FAT32 with: `sudo mkfs.vfat -F 32 -n BOOT /dev/sdX1`
+22. Format the second partition as ext4 with: `sudo mkfs.ext4 -L rootfs /dev/sdX2`
 
 ## Load Kernel and Root Filesystem onto SD card
 1. Copy `BOOT.BIN`, `image.ub`, and `system.dtb` to _BOOT_ partition of SD card: `cp ${PETALINUX_PROJECT_ROOT}/images/linux/{BOOT.BIN,image.ub,system.dtb} ${BOOT_MOUNT_POINT}`
-2. Copy `rootfs.cpio.gz` to _root_ partition of SD card: `sudo cp ${PETALINUX_PROJECT_ROOT}/images/linux/rootfs.cpio.gz ${ROOT_MOUNT_POINT}`
+2. Copy `rootfs.cpio.gz` to _rootfs_ partition of SD card: `sudo cp ${PETALINUX_PROJECT_ROOT}/images/linux/rootfs.cpio.gz ${ROOT_MOUNT_POINT}`
 3. Go to _root_ partition of SD card: `cd ${ROOT_MOUNT_POINT}`
 4. Unpack `rootfs.cpio.gz`: `sudo gunzip rootfs.cpio.gz` 
 5. Unpack `rootfs.cpio`: `sudo pax -r -c -f rootfs.cpio` 
